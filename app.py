@@ -3,10 +3,8 @@ import cv2
 import cvzone
 import math
 import os 
-from playsound import playsound
 from ultralytics import YOLO
 import time
-import pygame
 import threading
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
@@ -16,7 +14,6 @@ model = YOLO("best.pt")
 
 # class User(db.Model):
 #     id = db.Column(db.Integer,primary_key = True)
-pygame.mixer.init()
 
 # def play_alert_sound():
 #     # Play a simple alert sound using pygame
