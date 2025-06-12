@@ -1,0 +1,93 @@
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+</head>
+<body>
+    <style>
+        body{
+            background-image: url("../static/pre2.jpg");
+            background-size: cover;
+    background-attachment: fixed;
+
+    background-position:initial;
+
+    background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .form {
+font-size: 16px;
+line-height: 1.5;
+margin-bottom: 10px;
+}
+.detect{
+    display: inline-block;
+   background-color: #f51f1f;
+   color: #fff;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   font-size: 18px;
+   margin-left:15cm;
+}
+.chooseFile{
+    display: inline-block;
+   background-color: #333;
+   color: #fff;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   font-size: 18px;
+   margin-right:15cm;
+}
+nav ul{
+            background: transparent;
+            border: none;
+        }
+    </style>
+    <script>
+        function validateForm() {
+       // Get the file input element
+       var fileInput = document.getElementById('fileInput');
+
+       // Check if the file input is empty
+       if (fileInput.files.length === 0) {
+           // Display an error message or take any other appropriate action
+           alert('Please select a file.');
+          
+           // Prevent the form from being submitted
+           return false;
+       }
+
+       // If the file input is not empty, allow the form to be submitted
+       return true;
+   }
+   </script>
+   <nav>
+    <ul>
+    <li><a href="/predict">Back</a></li>
+    </ul>
+</nav>
+    <h1>Weapon Detection from Video</h1>
+    
+    <form action="/videoUpload" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <input class = "chooseFile" type="file" name="file" accept="video/*" id="fileInput">
+        <input class = "detect" type="submit" value="Detect">
+    </form>
+    <p>Note: Only MP4 videos recommended for compatibility.</p>
+
+    {% if result_video %}
+        <h2 style="color:white; text-align:center;">Detection Result:</h2>
+        <div style="text-align:center;">
+            <video width="600" controls>
+                <source src="{{ result_video }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    {% endif %}
+</body>
+</html>
+{% include 'footer.html' %}

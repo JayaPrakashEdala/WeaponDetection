@@ -1,0 +1,6 @@
+web: gunicorn app:app
+"""
+web: type of service
+gunicorn: production server
+app:app: Python filename (app.py) and Flask object (app = Flask(__name__))
+"""

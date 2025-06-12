@@ -1,0 +1,93 @@
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+</head>
+<body>
+    <style>
+        body{
+            background-image: url("../static/pre2.jpg");
+            background-size: cover;
+    background-attachment: fixed;
+
+    background-position:initial;
+
+    background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        nav ul{
+            background: transparent;
+            border: none;
+        }
+        .form {
+font-size: 16px;
+line-height: 1.5;
+margin-bottom: 10px;
+}
+
+.detect{
+    display: inline-block;
+   background-color:#f51f1f;
+   color: #fff;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   font-size: 18px;
+   margin-left:15cm;
+}
+.chooseFile{
+    display: inline-block;
+   background-color: #333;
+   color: #fff;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   font-size: 18px;
+   margin-right:15cm;
+   border: #fff;
+}
+    </style>
+    <script>
+         function validateForm() {
+        // Get the file input element
+        var fileInput = document.getElementById('fileInput');
+
+        // Check if the file input is empty
+        if (fileInput.files.length === 0) {
+            // Display an error message or take any other appropriate action
+            alert('Please select a file.');
+           
+            // Prevent the form from being submitted
+            return false;
+        }
+
+        // If the file input is not empty, allow the form to be submitted
+        return true;
+    }
+    </script>
+    <nav>
+        <ul>
+        <li><a href="/predict">Back</a></li>
+        </ul>
+    </nav>
+    <h1>Weapon Detection from Image</h1>
+    
+    <form class = "form" action="/imageUpload" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <input class = "chooseFile" type="file" name="file" accept="image/*" id="fileInput">
+        <input class = "detect" type="submit" value="Detect" id="submit">
+    </form>
+    <p>Note:Only Images</p>
+
+    {% if result_image %}
+        <h2 style="color:white; text-align:center;">Detection Result:</h2>
+        <div style="text-align:center;">
+            <img src="{{ result_image }}" style="width:600px; border: 3px solid white; border-radius: 10px;">
+        </div>
+    {% endif %}
+
+</body>
+</html>
+{% include 'footer.html' %}

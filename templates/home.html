@@ -1,0 +1,50 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+ <body>
+    <style>
+        body{
+            background-image: url("../static/mainhtml.jpg");
+            background-size: cover;
+    background-attachment: fixed;
+
+    background-position:initial;
+
+    background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .getStarted{
+   display: inline-block;
+   background-color:transparent;
+   color: #fff;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 10px;
+   font-size: 18px;
+   margin-left:10cm;
+   border-color: #fff;
+   }
+   p1{
+    color: #fff;
+    font-size: 50px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: auto;
+    margin-top: 3cm;
+   }
+   p2{
+    color: #fff;
+    font-size:30px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#fff;
+   }
+    </style>
+    <p1>ARMING AGAINST VIOLENCE</p1>
+    <br>
+    <p2>YOLO based Weapon Detection</p2>
+        <form method="POST" action="/GetStarted">
+            <button class = "getStarted" type="submit">Get-Started</button>
+        </form>    
+ </body>
+</html>  
+{% include 'footer.html' %}

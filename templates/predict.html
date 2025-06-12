@@ -1,0 +1,71 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weapon Detection</title>
+</head>
+<body>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-image: url("../static/predict1.png");
+            background-size: cover;
+    background-attachment: fixed;
+
+    background-position:initial;
+
+    background-repeat: no-repeat;
+            background-size: 100% 100%;
+}
+main ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+background-color: transparent;
+border:none;
+overflow: hidden;
+}
+main ul li a {
+display: block;
+padding: 14px 16px;
+text-decoration: none;
+font-family:fantasy;
+font-size: 20px;
+color: #000000;
+background-color: transparent;
+}
+main ul li a:hover {
+background-color: #8d8080;
+}
+section {
+padding: 20px;
+text-align: center;
+background: none;
+border: none;
+}
+footer {
+background-color: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+} 
+</style>
+<section>
+    <main>
+        <ul>
+            <li><a href="/imagePredict"><span class="image-symbol">📷</span>Image</a></li>
+            <br>
+            <li><a href="/videoPredict"><span class="image-symbol">📹</span>Video</a></li>
+            <br>
+            <li><a href="/livePredict"><span class="image-symbol">📺</span>Live</a></li>
+            
+            </ul>
+    </main>
+</section>
+</body>
+</html>
+{% include 'footer.html' %}
