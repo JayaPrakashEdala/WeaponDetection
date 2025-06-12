@@ -6,7 +6,6 @@ import os
 from ultralytics import YOLO
 import time
 import threading
-from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 model = YOLO("best.pt")
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
