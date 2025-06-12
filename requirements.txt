@@ -6,5 +6,4 @@ ultralytics
 cvzone
 numpy
 Pillow
-pygame
-playsound
+
