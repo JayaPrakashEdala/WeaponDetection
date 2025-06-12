@@ -2,6 +2,9 @@ flask
 gunicorn
 torch
 opencv-python
+ultralytics
+cvzone
 numpy
 Pillow
-
+pygame
+playsound
